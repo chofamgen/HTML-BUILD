@@ -28,14 +28,14 @@ body {
 }
 
 
-/* nav{
+nav{
     height:100px;
     width: 1200px;
     background-color: #F0F4F5;
     margin:auto;
     border:5px solid #FF5E14;
     border-radius: 10px;
-    text-align: center; */
+    text-align: center;
 
 }
 .navbar-links a{

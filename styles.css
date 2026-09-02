@@ -1,7 +1,7 @@
 body {
     margin: 0;
     min-height: 100vh;
-    background: #f0f0f0 url(./images/BLUE\ SPLASH.jpg);
+    background-image: #f0f0f0 url(./images/BLUE\ SPLASH.jpg);
 }  
 
 
@@ -94,10 +94,15 @@ nav{
     margin-right:100px ;
     
 }
+ /* .h2{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}  */
 
 footer{
     height:90px;
     background-color: #FFFFFF;
     border:1px solid #FF5E14;
     border-radius: 10px;
-}
+} 

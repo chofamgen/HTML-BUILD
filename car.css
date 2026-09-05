@@ -1,0 +1,229 @@
+/* ============================================
+   ROOT / GLOBAL
+   ============================================ */
+html, body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box; /* keeps border/padding INSIDE declared width, not added on top */
+    font-family: Arial, sans-serif;
+    background-image: url("./images/BACKGROUND FOR CARS.jpg"); /* quoted instead of backslash-escaped — more reliable across browsers */
+    background-size: cover;
+    color: #444;
+    width: 100%;
+}
+
+/* Setting the root font-size here means every `rem` unit on the page
+   is relative to THIS number. Change it once, everything scales together
+   — like a house thermostat controlling every room at once. */
+html {
+    font-size: 100%; /* 100% = respects the user's/browser's default (usually 16px). Don't hardcode this. */
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+header{
+    height: auto;
+    background-color: rgba(128, 128, 128, 0.815);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 1rem; /* was commented out at 20px — rem so it scales with root */
+}
+
+/* Fixed: title (h1) is now the BIG element, tagline (p) is smaller.
+   Previously both were swapped/inconsistent (10px h1, 60px p). */
+.header h1{
+    margin: 0;
+    color: #c02d2d;
+    /* clamp(min, preferred, max):
+       - never smaller than 1.5rem (readable on a small phone)
+       - grows with viewport width (5vw) on bigger screens
+       - never bigger than 3rem (won't dominate on a 4K monitor) */
+    font-size: clamp(1.5rem, 5vw, 3rem);
+}
+.header a{
+    color: #FFFFFF;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: bold;
+    font-family: serif;
+    text-decoration: line-through;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+.header p{
+    color: #FFFFFF;
+    font-size: clamp(0.9rem, 2vw, 1.25rem); /* was 60px — a tagline should never out-shout the title */
+    font-weight: bold;
+}
+
+nav{
+    background-color: #c02d2d;
+    height: auto;
+    min-height: 100px; /* min- instead of fixed height: content can grow if it wraps, never gets clipped */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+main{
+     background-color: #f470237c;
+     backdrop-filter: blur(20px);
+     border: 20px solid rgba(255, 255, 255, 0.1); /* fine detail — px is correctly fine here, borders shouldn't scale with viewport */
+     width: 95%;       /* was fully commented out — this is what stops main from touching screen edges on mobile */
+     max-width: 1400px; /* caps it from becoming absurdly wide on an ultrawide monitor */
+     margin: 100px auto 10px auto; /* auto left/right = horizontally centers the block */
+}
+
+/* ============================================
+   CAR SECTIONS
+   All four (.lambo, .bugatti, .ferrari, .porsche) follow
+   the SAME pattern — once you see it in .lambo, the rest
+   are just repeats with different colors.
+   ============================================ */
+
+.lambo{
+    display: flex;
+    flex-wrap: wrap;              /* THE FIX: when content is too wide for one row,
+                                      drop the overflow to a new line instead of
+                                      forcing everything into a shrinking single row */
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;                    /* was 100px — rem scales with root, and is far
+                                      more reasonable than a literal 100px gap */
+    padding: 1rem;
+}
+.lambo img{
+    width: 100%;                  /* fill available space... */
+    max-width: 500px;             /* ...but never exceed this ideal size (was 900px, way oversized) */
+    height: auto;                 /* preserves aspect ratio — never stretches/distorts */
+    object-fit: cover;
+    border: 10px solid rgba(255, 255, 255, 0.1);
+    border-bottom-right-radius: clamp(50px, 15vw, 300px); /* radius scales too, so it doesn't look absurd on small screens */
+    border-top-left-radius: clamp(20px, 5vw, 100px);
+}
+.lambo h1{
+    color: #FFFFFF;
+    font-size: clamp(1.75rem, 4vw, 3rem); /* was a flat 100px — this is the single
+                                              biggest fix: 100px text next to a 500px+
+                                              image is what wrecked the whole row */
+    font-weight: bold;
+    font-family: Inter, sans-serif; /* added a fallback — Inter may not be installed on the user's system */
+    max-width: 600px;   /* stops a single line of text from stretching edge-to-edge on wide screens */
+    text-align: center;
+}
+
+/* bugatti — identical pattern, different accent color */
+.bugatti{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;                    /* was 500px — that alone could push content off-screen on anything under a 4K display */
+    padding: 1rem;
+}
+.bugatti img{
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    border: 20px solid blue;      /* kept single declaration — original had TWO border rules,
+                                      the second silently overwrote the first, doing nothing */
+    border-bottom-right-radius: clamp(50px, 15vw, 300px);
+    border-top-left-radius: clamp(20px, 5vw, 100px);
+}
+.bugatti h1{
+    color: #FFFFFF;
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-weight: bold;
+    font-family: Inter, sans-serif;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* ferrari — same pattern again */
+.ferrari{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+.ferrari img{
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    border: 20px solid brown;
+    border-bottom-right-radius: clamp(50px, 15vw, 300px);
+    border-top-left-radius: clamp(20px, 5vw, 100px);
+}
+.ferrari h1{
+    color: #FFFFFF;
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-weight: bold;
+    font-family: Inter, sans-serif;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* porsche — same pattern, no more duplicated commented-out block above it */
+.porsche{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+.porsche img{
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    border: 20px solid gold;
+    border-bottom-right-radius: clamp(50px, 15vw, 300px);
+    border-top-left-radius: clamp(20px, 5vw, 100px);
+}
+.porsche h1{
+    color: #FFF;
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-weight: bold;
+    font-family: Inter, sans-serif;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer{
+    background-color: black;
+    height: auto;        /* was fixed 300px — let content decide height, never clip text */
+    min-height: 150px;
+    padding: 1.5rem 1rem;
+    box-sizing: border-box;
+}
+footer p{
+    color: #FFFFFF;
+    font-size: clamp(1rem, 3vw, 1.75rem); /* was 80px — absurdly large for a copyright line */
+    text-align: center;
+    margin-top: 0;
+}
+
+/* ============================================
+   MEDIA QUERY — "wardrobe change" for small screens.
+   Below 768px (roughly tablet-portrait and phones),
+   stack image above text instead of side-by-side,
+   since flex-wrap alone still puts them left/right until
+   they're forced to wrap — this makes the stack intentional
+   and centers everything for a cleaner mobile read.
+   ============================================ */
+@media (max-width: 768px) {
+    .lambo, .bugatti, .ferrari, .porsche {
+        flex-direction: column;
+        text-align: center;
+    }
+    main {
+        margin-top: 20px; /* the desktop 100px top margin is excessive once header shrinks on mobile */
+    }
+}

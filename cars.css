@@ -1,87 +1,190 @@
 html, body {
     margin: 0px;
     padding: 0px;
-        box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    background-image: url(./images/BACKGROUND\ FOR\ CARS.jpg);
+    box-sizing: border-box;
+    background-image: url(./images/buil.jpg);
     background-size: cover;
-    color: #444;
     width: 100%;
+    background-repeat: no-repeat;
+    font-size: 62.5%; 
 }
 
-header{
+ header{
     height: auto;
-    background-color: rgba(128, 128, 128, 0.815);
+    background-color: rgba(255, 255, 255, 0.08);
     font-family: Arial, sans-serif;
-    font-size: 10px;
+    font-size: 1rem;
     text-align: center;
-    /* padding: 20px; */
+    padding: 0.001rem;
+    margin: 10px;
+    /*liquid glass */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 2.5rem clamp(1rem, 3vw,2rem);
+    box-shadow: 0px 0px 8px 0 rgba(71, 70, 54, 0.76);
+    backdrop-filter:blur(15px) saturate(300%);
+    -webkit-backdrop-filter:blur(25px) saturate(220%);
+
 }
+
+
 .header h1{
     margin: 0;
-    color: #c02d2d;
-    font-size: 10px;
+    color: #0e7967;
+    font-size: clamp(2rem, 6vw,3.5rem);
 } 
+
 .header a{
-    color: #FFFFFF;
-    font-size: 60px;
+    background-color: #883d25;
+    color: #ffffff;
+    font-size: clamp(0.5rem, 5vw,1rem);
     font-weight: bold;
     font-family:  serif;
-    text-decoration: line-through;
-}
-.header p{
-    color: #FFFFFF;
-    font-size: 60px;
-    font-weight: bold;
+    text-decoration: underline;
 }
 
-nav{
-    background-color: #c02d2d;
-    height: 100px;
-    padding: 10px ;
-    box-sizing: border-box;
-    /* filter: blur(10px); */
+.header p{
+    color: #FFFFFF;
+    font-size: clamp(1rem, 3vw,2rem);
+    font-weight: bold;
+    font-style: italic;
 }
+
  
 main{
-    /* background-color: #e21a1a; */
-     background-color: #f470237c; 
-     backdrop-filter: blur(20px);
+     background-color: #d6cac428; 
+     backdrop-filter: blur(20px) saturate(200%);
      border: 20px solid rgba(255, 255, 255, 0.1);
-     /* width: 95%; */
-     margin: 10px auto;
-     margin-top: 100px;
+     width: 70%;
+     margin: 1rem auto;
+     margin-top: clamp(10rem, 8vw,12rem);
+     border-radius: 20px;
+     height: auto;
    
     
 }
 
 .lambo{
     display: flex;
+    flex-wrap: wrap;
+
     justify-content: center;
     align-items:  center;
-    gap: 100px;
+    gap: 3rem;
+
 
 }
+
 .lambo img{
-     height: auto;
-    max-width: 900px;
+    height: auto;
+    width: 80%;
+    max-width: 50rem;
     object-fit: cover;
-    margin-left: 100px;
     border: 10px solid rgba(255, 255, 255, 0.1);
-    border-bottom-right-radius: 500px;
-    border-top-left-radius: 100px;
-    margin-bottom: 150px;
+    border-bottom-right-radius: clamp(5rem, 15vw, 30rem);
+    border-top-left-radius: clamp(2rem, 5vw, 10rem);
+    margin-bottom: 2rem;
 
 }
+
 .lambo h1{
     color: #FFFFFF;
-    font-size: 100px;
+    font-size: clamp(2rem, 6vw,3.5rem);
+    font-weight: bold;
+    font-family:  Inter;    
+}  
+.lambo p1{
+    color: #FFFFFF;
+    font-size: clamp(0.5rem, 3vw,2rem);
     font-weight: bold;
     font-family:  Inter;    
 }
 
+
+
+
+
+footer{
+      background-color: rgba(255, 255, 255, 0.08); 
+
+    height: auto;
+    padding: clamp(1rem, 3vw,2rem) ;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 3% 6%; 
+    
+    border: 1px solid rgba(88, 84, 84, 0.966);
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 2.5rem clamp(1rem, 3vw,2rem);
+    box-shadow: 0px 0px 8px 0 rgba(71, 70, 54, 0.76);
+    backdrop-filter:blur(25px) saturate(300%);
+    -webkit-backdrop-filter:blur(25px) saturate(220%);
+    -webkit-text-stroke: 0.5px rgba(226, 17, 17, 0.5);
+}
+
+
+
+/* footer {
+    height: auto;
+    box-sizing: border-box;
+    
+    padding: 2.5rem clamp(1rem, 3vw, 2rem); 
+    border-radius: 20px;
+    margin: 20px; 
+
+    
+    background-color: rgba(255, 255, 255, 0.08); 
+
+    backdrop-filter: blur(25px) saturate(220%);
+    -webkit-backdrop-filter: blur(25px) saturate(220%);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}  */
+
+
+
+footer p{
+    color: #FFFFFF;
+    font-size: clamp(2rem, 4vw,2rem);
+    text-align: center;
+    /* margin-top: 30px; */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* bugatti */
-.bugatti{
+ /* .bugatti{
     display: flex;
     justify-content: center;
     align-items:  center;
@@ -93,7 +196,7 @@ main{
     max-width: 900px;
     object-fit: cover;
     margin-right: 100px;
-    border: 10px solid rgba(255, 255, 255, 0.1);
+     border: 10px solid rgba(255, 255, 255, 0.1); 
     border-bottom-right-radius: 500px;
     border-top-left-radius: 100px;
     margin-bottom: 150px;
@@ -105,69 +208,4 @@ main{
     font-size: 100px;
     font-weight: bold;
     font-family:  Inter;    
-}
-
-
-
-/* ferrari */
-.ferrari{
-    display: flex;
-    justify-content: center;
-    align-items:  center;
-    gap: 100px;
-}
-.ferrari img{
-     height: auto;
-    max-width: 900px;
-    object-fit: cover;
-    margin-left: 100px;
-    border: 10px solid rgba(255, 255, 255, 0.1);
-    border-bottom-right-radius: 500px;
-    border-top-left-radius: 100px;
-    margin-bottom: 150px;
-    border: 20px solid brown;
-}
-.ferrari h1{
-    color: #FFFFFF;
-    font-size: 100px;
-    font-weight: bold;
-    font-family:  Inter;    
-}
-
-/* PORSCHE */
-.porsche{
-    display: flex;
-    justify-content: center;
-    align-items:  center;
-    gap: 100px;
-}
-.porsche img{
-    height: auto;
-    max-width: 900px;
-    object-fit: cover;
-    margin-left: 100px;
-    border: 10px solid rgba(255, 255, 255, 0.1);
-    border-bottom-right-radius: 500px;
-    border-top-left-radius: 100px;
-    border: 20px solid gold;
-    margin-bottom: 150px;
-}
- /* h1{
-    color: #FFF;
-    font-size: 100px;
-    font-weight: bold;
-    font-family:  Inter;    
-} */
-
-footer{
-    background-color: BLACK;
-    height: 300px;
-    padding: 10px ;
-    box-sizing: border-box;
-}
-/* p{
-    color: #FFFFFF;
-    font-size: 80px;
-    text-align: center;
-    margin-top: 30px;
-} */
+}  */
